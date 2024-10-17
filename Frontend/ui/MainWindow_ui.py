@@ -53,32 +53,32 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.pb_startstream, 1, 0, 1, 1)
 
-        self.groupBox = QGroupBox(self.tab_3)
-        self.groupBox.setObjectName(u"groupBox")
-        self.formLayout = QFormLayout(self.groupBox)
+        self.gb_startstream = QGroupBox(self.tab_3)
+        self.gb_startstream.setObjectName(u"gb_startstream")
+        self.formLayout = QFormLayout(self.gb_startstream)
         self.formLayout.setObjectName(u"formLayout")
-        self.pb_uploadaccounts = QPushButton(self.groupBox)
+        self.pb_uploadaccounts = QPushButton(self.gb_startstream)
         self.pb_uploadaccounts.setObjectName(u"pb_uploadaccounts")
 
         self.formLayout.setWidget(0, QFormLayout.LabelRole, self.pb_uploadaccounts)
 
-        self.lineEdit = QLineEdit(self.groupBox)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.le_accounts = QLineEdit(self.gb_startstream)
+        self.le_accounts.setObjectName(u"le_accounts")
 
-        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.lineEdit)
+        self.formLayout.setWidget(0, QFormLayout.FieldRole, self.le_accounts)
 
-        self.pb_uploadurl = QPushButton(self.groupBox)
+        self.pb_uploadurl = QPushButton(self.gb_startstream)
         self.pb_uploadurl.setObjectName(u"pb_uploadurl")
 
         self.formLayout.setWidget(1, QFormLayout.LabelRole, self.pb_uploadurl)
 
-        self.lineEdit_2 = QLineEdit(self.groupBox)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.le_url = QLineEdit(self.gb_startstream)
+        self.le_url.setObjectName(u"le_url")
 
-        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit_2)
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.le_url)
 
 
-        self.gridLayout.addWidget(self.groupBox, 0, 0, 1, 2)
+        self.gridLayout.addWidget(self.gb_startstream, 0, 0, 1, 2)
 
         self.groupBox_2 = QGroupBox(self.tab_3)
         self.groupBox_2.setObjectName(u"groupBox_2")
@@ -131,6 +131,15 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 800, 22))
         MainWindow.setMenuBar(self.menubar)
+        QWidget.setTabOrder(self.tabWidget, self.pb_uploadaccounts)
+        QWidget.setTabOrder(self.pb_uploadaccounts, self.pb_uploadurl)
+        QWidget.setTabOrder(self.pb_uploadurl, self.le_accounts)
+        QWidget.setTabOrder(self.le_accounts, self.le_url)
+        QWidget.setTabOrder(self.le_url, self.pb_startstream)
+        QWidget.setTabOrder(self.pb_startstream, self.pb_stopstream)
+        QWidget.setTabOrder(self.pb_stopstream, self.lw_devices)
+        QWidget.setTabOrder(self.lw_devices, self.pb_refreshdevices)
+        QWidget.setTabOrder(self.pb_refreshdevices, self.te_log)
 
         self.retranslateUi(MainWindow)
 
@@ -145,7 +154,7 @@ class Ui_MainWindow(object):
         self.actionQuit.setText(QCoreApplication.translate("MainWindow", u"Quit", None))
         self.pb_stopstream.setText(QCoreApplication.translate("MainWindow", u"Stop", None))
         self.pb_startstream.setText(QCoreApplication.translate("MainWindow", u"Start Stream", None))
-        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))
+        self.gb_startstream.setTitle("")
         self.pb_uploadaccounts.setText(QCoreApplication.translate("MainWindow", u"Accounts", None))
         self.pb_uploadurl.setText(QCoreApplication.translate("MainWindow", u"Url", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"GroupBox", None))

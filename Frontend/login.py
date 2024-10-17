@@ -4,7 +4,7 @@ from PySide6 import QtWidgets as qtw
 from PySide6 import QtGui as qtg
 
 
-from Application_Login.UI.login_window_ui import Ui_w_loginform
+from ui.login_window_ui import Ui_w_loginform
 
 class LoginForm(qtw.QWidget, Ui_w_loginform):
 
